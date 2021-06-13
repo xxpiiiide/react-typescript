@@ -13,3 +13,8 @@ function sumArray(numbers: number[]): number {
 const total = sumArray([1,2,3,4,5])
 console.log(total)
 
+
+function returnNoting(): void {
+    console.log('I am just saying hello world')
+}
+// 함수에서 아무것도 반환하지 않아야 한다면 void로 설정하면 된다.
