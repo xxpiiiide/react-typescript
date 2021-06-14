@@ -1,21 +1,26 @@
 "use strict";
-// const message: string = 'hello world';
-// console.log(message)
-// meessage는 string이므로 number인 1은 될 수 없다고 뜬다.
-// const message: string = 1;
-// console.log(MessagePort)
+// 클래스에서 interface를 implements하기
+var Circle = /** @class */ (function () {
+    function Circle(radius) {
+        this.radius = radius;
+    }
+    // 너비를 가져오는 함수를 구현한다.
+    Circle.prototype.getArea = function () {
+        return this.radius * this.radius * Math.PI; // Math.PI속성은 원주와 지름비율인 약 3.14를 나타낸다.
+    };
+    return Circle;
+}());
+var Rectangle = /** @class */ (function () {
+    function Rectangle(width, height) {
+        this.width = width;
+        this.height = height;
+    }
+    Rectangle.prototype.getArea = function () {
+        return this.width * this.height;
+    };
+    return Rectangle;
+}());
 
 
-var count = 0; //숫자
-count += 1;
-count = "갑자기 분위기 문자열"; // 현재 에러 발생
-var message = 'hello world'; // 문자열
-var done = true; // 불리언 값
-var numbers = [1, 2, 3]; // 숫자배열
-var messages = ['hello', 'wolrd']; // 문자배열
-messages.push(1); // 이거는 문자배열안에 숫자를 넣으려고 하기 때문에 되지 않을 것이다.
-var mightBeUndefined = undefined; // mightBeUndefined가 string일 수도 있고, undefined일 수도 있다.
-var nullableNumber = null; // nullableNumber가 number일 수도 있고, null일 수도 있다.
-var color = 'red'; // 'red'나 'orange'나 'yellow'중에 'red'가 하나임
-color = 'yellow';
-color = 'green'; // 현재 에러 발생
+var shpaes = [new Circle(5), new Rectangle(10, 5)];
+shpaes.forEach(function (shape) { return console.log(shape.getArea()); }); // forEach()메서드는 각 배열 요소에 대해 제공된 함수를 한 번씩 실행한다.
