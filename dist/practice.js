@@ -1,27 +1,27 @@
-"use strict";
+'use strict';
 // Generics
 // 클래스에서 Generics 사용하기
 var Queue = /** @class */ (function () {
-    function Queue() {
-        this.list = [];
-    }
-    Object.defineProperty(Queue.prototype, "length", {
-        get: function () {
-            return this.list.length;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Queue.prototype.enqueue = function (item) {
-        this.list.push(item);
-    };
-    Queue.prototype.dequeue = function () {
-        return this.list.shift();
-    };
-    return Queue;
-}());
+	function Queue() {
+		this.list = [];
+	}
+	Object.defineProperty(Queue.prototype, 'length', {
+		get: function () {
+			return this.list.length;
+		},
+		enumerable: false,
+		configurable: true,
+	});
+	Queue.prototype.enqueue = function (item) {
+		this.list.push(item);
+	};
+	Queue.prototype.dequeue = function () {
+		return this.list.shift();
+	};
+	return Queue;
+})();
 var queue = new Queue();
-// queue.enqueue(0)
+// queue.enqueue(0);
 queue.enqueue(1);
 queue.enqueue(2);
 queue.enqueue(3);
