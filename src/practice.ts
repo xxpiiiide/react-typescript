@@ -1,24 +1,31 @@
 // Generics
 
 
-// interface에서 Generics 사용하기
-interface Items<T> {
-    list: T[]
+// 클래스에서 Generics 사용하기
+
+class Queue<T> {
+    list: T[] = []
+    get length() {
+        return this.list.length;
+    }
+    enqueue(item: T) {
+        this.list.push(item);
+    }
+    dequeue() {
+        return this.list.shift();
+    }
 }
 
-const items: Items<string> = {
-    list: ['a', 'b', 'c']
-}
+const queue = new Queue<number>();
 
+// queue.enqueue(0)
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)
 
-
-
-// type에서 Generics 사용하기
-type Item<T> = {
-    list: T[]
-}
-
-const item: Item<string> = {
-    list: ['a', 'b', 'c']
-}
-
+console.log(queue.dequeue())
+console.log(queue.dequeue())
+console.log(queue.dequeue())
+console.log(queue.dequeue())
+console.log(queue.dequeue())
