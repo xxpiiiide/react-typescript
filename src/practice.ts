@@ -1,34 +1,24 @@
 // Generics
-// 함수에서 Generics 사용하기
 
-// function merge(a: any, b: any): any {
-//     return {
-//         ...a,
-//         ...b
-//     }
-// }
 
-// 위 merge함수를 Generics 이용하기
-function merge<A, B>(a: A, b: B): A & B {
-    return {
-        ...a, 
-        ...b
-    }
+// interface에서 Generics 사용하기
+interface Items<T> {
+    list: T[]
 }
 
-const merged = merge({foo: 1}, {bar: 1})
-
-
-// Generics 이용한 또다른 함수 예
-function wrap<T>(param: T) {
-    return { 
-        param
-    }
+const items: Items<string> = {
+    list: ['a', 'b', 'c']
 }
 
-const wrapped = wrap(10)
 
 
 
+// type에서 Generics 사용하기
+type Item<T> = {
+    list: T[]
+}
 
+const item: Item<string> = {
+    list: ['a', 'b', 'c']
+}
 
